@@ -1,13 +1,9 @@
 public class Main {
     public static void main(String[] args) {
         String ecuacion = "{x+[(3+A)*5]}";
-        String cierrap = ")";
-        String cierral = "}";
-        String cierrac = "]";
 
         ListaDoble cadena = new ListaDoble();
 
-        // Recorrer la ecuación
         for (int i = 0; i < ecuacion.length(); i++) {
             char c = ecuacion.charAt(i);
             if (c == '(' || c == '{' || c == '[') {

@@ -2,7 +2,7 @@ public class ListaDoble {
     Nodo cabeza;
     Nodo cola;
 
-    // Constructor de la lista doble
+    // Constructor
     ListaDoble() {
         cabeza = new Nodo();
         cola = new Nodo();
@@ -12,7 +12,7 @@ public class ListaDoble {
         cola.anterior = cabeza;
     }
 
-    // Función para insertar un nodo al principio de la lista
+    // Método para insertar un nodo al principio de la lista
     public void insertarPrimero(String inf) {
         Nodo nodo = new Nodo();
         nodo.inf = inf;
@@ -23,7 +23,7 @@ public class ListaDoble {
         siguiente.anterior = nodo;
     }
 
-    // Función para insertar un nodo al final de la lista
+    // Método para insertar un nodo al final de la lista
     public void insertarUltimo(String inf) {
         Nodo nodo = new Nodo();
         nodo.inf = inf;
@@ -34,7 +34,7 @@ public class ListaDoble {
         anterior.siguiente = nodo;
     }
 
-    // Función para mostrar el último nodo de la lista
+    // Método para mostrar el último nodo
     public void mostrarUltimo() {
         if (cola.anterior != cabeza) {
             System.out.println("Último elemento: " + cola.anterior.inf);
@@ -43,7 +43,7 @@ public class ListaDoble {
         }
     }
 
-    // Función para imprimir toda la lista
+    // Método para mostrar la lista completa
     public void mostrarLista() {
         Nodo actual = cabeza.siguiente;
         while (actual != cola) {
@@ -51,4 +51,21 @@ public class ListaDoble {
             actual = actual.siguiente;
         }
     }
+
+    // Método para eliminar el último nodo
+    public void eliminarUltimo() {
+        if (cola.anterior != cabeza) { // Verificamos si la lista no está vacía
+            Nodo actual = cola.anterior;
+            Nodo anterior = actual.anterior;
+            Nodo siguiente = cola;
+            anterior.siguiente = siguiente;
+            siguiente.anterior = anterior;
+            actual.anterior = null;
+            actual.siguiente = null;
+        }
+    }
 }
+
+
+
+

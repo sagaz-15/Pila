@@ -51,6 +51,9 @@ public class ListaDoble {
             actual = actual.siguiente;
         }
     }
+    public Nodo peek() {
+        return cabeza.siguiente != cola ? cabeza.siguiente : null;
+    }
 
     // Método para eliminar el último nodo
     public void eliminarUltimo() {
@@ -64,6 +67,8 @@ public class ListaDoble {
             actual.siguiente = null;
         }
     }
+
+
 }
 
 
